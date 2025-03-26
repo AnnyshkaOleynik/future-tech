@@ -63,13 +63,20 @@
     overflow: hidden !important;
   }
 
-  @mixin full-vw-centered-line ($prorerty: top) {
+  @mixin full-vw-centered-line (
+      $prorerty: top,
+      $left: 50%,
+      $right: 50%,
+      $translate: -50%
+    ) {
     position: relative;
 
-    &::before {
-      @include abs-x;
-
+    &::before {     
       content: '';
+      position: absolute;
+      left: $left;
+      right: $right;
+      translate: $translate;
       #{$prorerty}: 0;
       width: 100vw;
       height: rem(1);

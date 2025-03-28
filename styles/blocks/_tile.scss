@@ -6,6 +6,10 @@
     background-color: var(--color-dark-10);
     border: var(--border);
 
+    &--short {
+        padding: fluid(30, 20);
+    }
+
     @include laptop {
         border-radius: rem(10);
     }

@@ -31,21 +31,6 @@ class Tabs extends BaseComponent {
     this.bindEvents()
   }
 
-  getProxyState(initialState) {
-    return new Proxy(initialState, {
-      get: (target, prop) => {
-        return target[prop]
-      },
-      set: (target, prop, value) => {
-        target[prop] = value
-
-        this.updateUI()
-
-        return true
-      },
-    })
-  }
-
   updateUI() {
     const { activeTabIndex } = this.state
 

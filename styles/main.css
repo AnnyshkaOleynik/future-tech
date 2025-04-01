@@ -2458,6 +2458,23 @@ button[aria-label]::before {
   }
 }
 
+.select__original-control {
+  min-width: 6.25rem;
+}
+@media (width > 47.99875rem) {
+  .select__original-control {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
 .select__body {
   position: relative;
 }
@@ -2474,6 +2491,13 @@ button[aria-label]::before {
     clip: rect(0 0 0 0) !important;
     overflow: hidden !important;
   }
+}
+.select__button, .select__option {
+  user-select: none;
+  cursor: pointer;
+}
+.select__button *, .select__option * {
+  pointer-events: none;
 }
 .select__button {
   display: flex;
@@ -2502,13 +2526,6 @@ button[aria-label]::before {
   .select__button::after {
     --size: 1.25rem;
   }
-}
-.select__button, .select__option {
-  user-select: none;
-  cursor: pointer;
-}
-.select__button *, .select__option * {
-  pointer-events: none;
 }
 .select__dropdown {
   position: absolute;
